@@ -13,19 +13,19 @@ public class Problem003 extends BaseTestCase {
 
 	@Override
 	public String solve() {
-		List<Integer> factors = primeFactors(600851475143L);
-		Integer maxFactor = 0;
-		for (Integer f : factors)
+		List<Long> factors = primeFactors(600851475143L);
+		Long maxFactor = 0L;
+		for (Long f : factors)
 			maxFactor = Math.max(f, maxFactor);
 			
 		return maxFactor.toString();
 	}
 
 	
-	public static List<Integer> primeFactors(long number) {
+	public static List<Long> primeFactors(long number) {
 		long n = number; 
-		List<Integer> factors = new ArrayList<Integer>();
-		for (int i = 2; i <= n; i++) {
+		List<Long> factors = new ArrayList<Long>();
+		for (long i = 2; i <= n; i++) {
 			while (n % i == 0) {
 				factors.add(i);
 				n /= i;
