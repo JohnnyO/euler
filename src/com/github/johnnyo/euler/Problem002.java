@@ -1,5 +1,7 @@
 package com.github.johnnyo.euler;
 
+import com.github.johnnyo.euler.util.FibonacciSequence;
+
 public class Problem002 extends BaseTestCase {
 
 	@Override
@@ -9,18 +11,15 @@ public class Problem002 extends BaseTestCase {
 
 	@Override
 	public String solve() {
+
+		FibonacciSequence fibonacci = new FibonacciSequence(4000000);
 		int sum = 0;
-		int a = 0;
-		int b = 1;
-		int temp;
-		while (b < 4000000) {
-			if (b % 2 == 0)
-				sum += b;
-			temp = a;
-			a = b;
-			b = temp + b;
+		for (Integer value : fibonacci) {
+			if (value % 2 == 0)
+				sum = sum + value;
 		}
 		return Integer.toString(sum);
 	}
+
 
 }
