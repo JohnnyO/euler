@@ -7,8 +7,7 @@ public class Problem003 extends BaseTestCase {
 
 	@Override
 	public String getAnswer() {
-		// TODO Auto-generated method stub
-		return Integer.toString(6857);
+		return "6857";
 	}
 
 	@Override

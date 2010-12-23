@@ -16,7 +16,7 @@ import org.junit.Test;
  * Once you have successfully solved the problem and verified your answer at Project Euler, you can then update the 
  * getAnswer() method with the correct answer, then begin working on refactoring or optimizing your solution.
  * 
- * @author johnnyo
+ * @author JohnnyO
  *
  */
 public abstract class BaseTestCase {

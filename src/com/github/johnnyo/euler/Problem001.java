@@ -7,7 +7,7 @@ package com.github.johnnyo.euler;
  * Find the sum of all the multiples of 3 or 5 below 1000.
  * 
  * http://projecteuler.net/index.php?section=problems&id=1
- * @author johnnyo
+ * @author JohnnyO
  *
  */
 public class Problem001 extends BaseTestCase {

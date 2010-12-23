@@ -6,7 +6,7 @@ public class Problem002 extends BaseTestCase {
 
 	@Override
 	public String getAnswer() {
-		return Integer.toString(4613732);
+		return "4613732";
 	}
 
 	@Override
