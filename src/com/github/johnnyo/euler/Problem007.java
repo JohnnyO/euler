@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * What is the 10001st prime number?
  * 
- * @author jjo135
+ * @author johnnyo
  * 
  */
 public class Problem007 extends BaseTestCase {
