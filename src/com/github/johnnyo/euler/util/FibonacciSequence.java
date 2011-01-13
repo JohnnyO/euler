@@ -4,7 +4,8 @@ import java.util.Iterator;
 
 /**
  * FibonacciSequence is an iterator over all the fibonacci numbers below a specified limit.  For convenience,
- * the first two values returned are 1 and 2.   
+ * the first two values returned are 1 and 2.  Note that this may contradict some problems which assume the first two 
+ * entries in the sequence are 0 and 1
  * @author johnnyo
  * 
  */

@@ -2,6 +2,13 @@ package com.github.johnnyo.euler;
 
 import com.github.johnnyo.euler.util.FibonacciSequence;
 
+/**
+ * By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the
+ * even-valued terms.
+ * 
+ * @author johnnyo
+ * 
+ */
 public class Problem002 extends BaseTestCase {
 
 	@Override
@@ -20,6 +27,5 @@ public class Problem002 extends BaseTestCase {
 		}
 		return Integer.toString(sum);
 	}
-
 
 }
