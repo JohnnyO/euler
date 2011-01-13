@@ -8,19 +8,17 @@ import java.math.BigInteger;
  * evenly divisible by all of the numbers from 1 to 20?
  * 
  * 
- * 
+ * @author johnnyo
  */
 public class Problem005 extends BaseTestCase {
 
 	
 	public String getAnswer() {
-		// TODO Auto-generated method stub
 		return "232792560";
 	}
 
 	@Override
 	public String solve() {
-		//return Integer.toString(2*2*2*2*3*3*5*7*11*13*17*19);
 		
 		long answer = 1;
 		for (int i=1; i < 21; i++) {
