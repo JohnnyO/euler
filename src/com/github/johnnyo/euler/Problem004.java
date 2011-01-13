@@ -5,7 +5,7 @@ package com.github.johnnyo.euler;
  *
  * Find the largest palindrome made from the product of two 3-digit numbers.
  * 
- * @author JohnnyO
+ * @author johnnyo
  *
  */
 public class Problem004 extends BaseTestCase {
@@ -16,6 +16,10 @@ public class Problem004 extends BaseTestCase {
 	}
 
 	@Override
+	/**
+	 * This is another problem that it is pretty easy to brute force in under a second, so we don't spend a lot of 
+	 * time over-optimizing
+	 */
 	public String solve() {
 		int max = 1;
 		for (int x = 999; x > 100; x--)
