@@ -37,11 +37,9 @@ public class Problem011 extends BaseTestCase {
 	}
 
 	/**
-	 * In order to solve this one, we need to iterate through the grid in each of the 8 cardinal directions.
-	 * We can specify these cardinal direction by defining our direction with a xstep and a ystep.
-	 * x=+1 and y=0  is EAST
-	 * y=-1 and y=0 is WEST
-	 * x=+1 and y=+1 is NORTHEAST, etc.
+	 * In order to solve this one, we need to iterate through the grid in each of the 8 cardinal directions. We can
+	 * specify these cardinal direction by defining our direction with a xstep and a ystep. x=+1 and y=0 is EAST y=-1
+	 * and y=0 is WEST x=+1 and y=+1 is NORTHEAST, etc.
 	 * 
 	 * Now, we loop through each direction and perform a search in that direction
 	 */
@@ -50,7 +48,7 @@ public class Problem011 extends BaseTestCase {
 		long max = 0;
 		for (int x = -1; x < 2; x++)
 			for (int y = -1; y < 2; y++)
-				if (!(x == 0 && y == 0))   //if x and y are both zero, we aren't advancing, just cubing the numbers
+				if (!(x == 0 && y == 0)) // if x and y are both zero, we aren't advancing, just cubing the numbers
 					max = Math.max(max, search(x, y));
 
 		return Long.toString(max);
@@ -58,8 +56,9 @@ public class Problem011 extends BaseTestCase {
 	}
 
 	/**
-	 * A search simply figures out what the proper start and end points are for the loop, then runs through the 
-	 * grid to find the biggest product in a given cardinal direction.
+	 * A search simply figures out what the proper start and end points are for the loop, then runs through the grid to
+	 * find the biggest product in a given cardinal direction.
+	 * 
 	 * @param xIncrement
 	 * @param yIncrement
 	 * @return
@@ -67,10 +66,10 @@ public class Problem011 extends BaseTestCase {
 	private long search(int xIncrement, int yIncrement) {
 		long max = 0;
 		int xStart = (xIncrement >= 0) ? 0 : 3;
-		int xStop = (xIncrement <= 0) ? 20 : 16;
+		int xStop = (xIncrement <= 0) ? 20 : 17;
 
 		int yStart = (yIncrement >= 0) ? 0 : 3;
-		int yStop = (yIncrement <= 0) ? 20 : 16;
+		int yStop = (yIncrement <= 0) ? 20 : 17;
 
 		for (int x = xStart; x < xStop; x++)
 			for (int y = yStart; y < yStop; y++) {
