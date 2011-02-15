@@ -33,17 +33,21 @@ public abstract class BaseTestCase {
 		assertTrue(TIME_ELAPSED, elapsed < 60000);      //Check that it ran in the expected time 
 	}
 	
+	
+	
+	/**
+	 * This method should compute the result, and return its String representation
+	 * @return the computed solution to the problem
+	 */
+	public abstract String solve();
+	
+	
+	
 	/**
 	 * Abstract method that returns a known answer to a problem in a String representation.
 	 * NOTE:  This method should simply return the answer, not compute it.
 	 * @return String representation of the answer to problem
 	 */
 	public abstract String getAnswer();
-	
-	/**
-	 * This method should compute the result, and return its String representation
-	 * @return the computed solution to the problem
-	 */
-	public abstract String solve(); 
 
 }
