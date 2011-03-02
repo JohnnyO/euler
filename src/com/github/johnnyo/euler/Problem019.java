@@ -1,4 +1,4 @@
-package com.github.johnnyo.euler.util;
+package com.github.johnnyo.euler;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
