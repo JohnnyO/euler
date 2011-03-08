@@ -3,6 +3,8 @@ package com.github.johnnyo.euler;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.github.johnnyo.euler.util.Cache;
+
 /**
  * Find the greatest product of five consecutive digits in the 1000-digit number.
  * 
@@ -27,19 +29,6 @@ public class Problem008 extends BaseTestCase {
 
 	// rather than parsing each digit every time, we set up a simple map from the character representation to the
 	// integer representation of a number
-	private final Map<Character, Integer> map = new HashMap<Character, Integer>();
-	{
-		map.put('0', 0);
-		map.put('1', 1);
-		map.put('2', 2);
-		map.put('3', 3);
-		map.put('4', 4);
-		map.put('5', 5);
-		map.put('6', 6);
-		map.put('7', 7);
-		map.put('8', 8);
-		map.put('9', 9);
-	}
 
 	@Override
 	public String getAnswer() {
@@ -54,7 +43,7 @@ public class Problem008 extends BaseTestCase {
 	 */
 	public String solve() {
 		char[] digits = input.toCharArray();
-
+		Map<Character,Integer> map = Cache.getCharacterToIntegerMap();
 		int max = 0;
 		for (int i = 0; i < digits.length - 5; i++) {
 			int value = map.get(digits[i]);
