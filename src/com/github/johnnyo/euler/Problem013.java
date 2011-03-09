@@ -18,7 +18,7 @@ public class Problem013 extends BaseTestCase {
 	@Override
 	public String solve() {
 		try {
-			InputStream is = this.getClass().getResourceAsStream("problem-013-data.txt");
+			InputStream is = this.getClass().getResourceAsStream("data/problem-013.txt");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 			String line = null;
 			BigInteger sum = new BigInteger("0");
