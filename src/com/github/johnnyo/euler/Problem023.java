@@ -15,7 +15,7 @@ public class Problem023 extends BaseTestCase {
 	private static final int UPPER_LIMIT = 28123;
 
 	public String getAnswer() {
-		return "X";
+		return "4179871";
 	}
 
 	@Override
