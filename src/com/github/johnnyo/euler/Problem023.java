@@ -1,6 +1,9 @@
 package com.github.johnnyo.euler;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import com.github.johnnyo.euler.util.PrimeFactors;
 

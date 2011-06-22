@@ -1,6 +1,5 @@
 package com.github.johnnyo.euler;
 
-import java.util.Collection;
 import java.util.Set;
 
 import com.github.johnnyo.euler.util.PrimeFactors;

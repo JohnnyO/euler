@@ -1,8 +1,9 @@
 package com.github.johnnyo.euler;
 
-import java.io.*;
-import java.math.BigInteger;
-import java.util.HashMap;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Map;
 
 import com.github.johnnyo.euler.util.Cache;

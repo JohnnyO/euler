@@ -1,7 +1,5 @@
 package com.github.johnnyo.euler;
 
-import java.util.*;
-
 import com.github.johnnyo.euler.util.PrimeFactors;
 
 /**

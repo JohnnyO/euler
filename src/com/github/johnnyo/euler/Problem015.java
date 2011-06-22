@@ -1,7 +1,6 @@
 package com.github.johnnyo.euler;
 
 import java.math.BigInteger;
-import java.text.Bidi;
 
 /**
  * 

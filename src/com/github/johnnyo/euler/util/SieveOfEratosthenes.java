@@ -1,6 +1,8 @@
 package com.github.johnnyo.euler.util;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * By using a sieve of Eratosthenes, this class calculates a list of all primes below a specified limit.

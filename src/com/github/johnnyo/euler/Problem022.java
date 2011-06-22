@@ -1,7 +1,12 @@
 package com.github.johnnyo.euler;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Using the provided file 46K text file containing over five-thousand first

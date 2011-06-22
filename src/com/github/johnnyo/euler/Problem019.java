@@ -3,9 +3,6 @@ package com.github.johnnyo.euler;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-
-import com.github.johnnyo.euler.BaseTestCase;
-
 public class Problem019 extends BaseTestCase{
 
 	@Override

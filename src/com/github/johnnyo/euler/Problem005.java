@@ -1,6 +1,5 @@
 package com.github.johnnyo.euler;
 
-import java.math.BigInteger;
 
 /**
  * 2520 is the smallest number that can be divided by each of the numbers from 1

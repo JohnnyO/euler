@@ -1,6 +1,9 @@
 package com.github.johnnyo.euler;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * What is the greatest product of four adjacent numbers in any direction (up, down, left, right, or diagonally) in the
