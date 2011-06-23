@@ -9,24 +9,27 @@ import com.github.johnnyo.euler.util.SieveOfEratosthenes;
  * 
  */
 public class Problem007 extends BaseTestCase {
+    
+    private static final int NTHPRIME = 10001;
+    private static final int FACTOR = 20;
+    
 
-	@Override
-	public String getAnswer() {
-		return "104743";
-	}
+    @Override
+    public String getAnswer() {
+        return "104743";
+    }
 
-	@Override
-	/**
-	 * Our solution is simply to use a Sieve of Eratosthenes with a big enough limit, then extract the 10001st prime.
-	 *
-	 */
-	public String solve() {
-		//200,000 is an arbitrarily chosen limit, based on the assumption that at least 5% of them will be prime
-		SieveOfEratosthenes sieve = new SieveOfEratosthenes(200000);
-		
-		int answer = sieve.get(10001);  
-		return Integer.toString(answer);
-	}
+    @Override
+    /**
+     * Our solution is simply to use a Sieve of Eratosthenes with a big enough limit, then extract the 10001st prime.
+     *
+     */
+    public String solve() {
+        // An arbitrarily chosen limit, based on the assumption that at least 5% of them will be prime
+        SieveOfEratosthenes sieve = new SieveOfEratosthenes(NTHPRIME * FACTOR );
 
-	
+        int answer = sieve.get(10000);
+        return Integer.toString(answer);
+    }
+
 }

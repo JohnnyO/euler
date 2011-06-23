@@ -9,55 +9,63 @@ import java.util.List;
  * 
  * Currently being used in the solutions of problems 7 and 10.
  * 
- * @author johnnyo
+ * @author JohnnyO
  * 
  */
-public class SieveOfEratosthenes implements Iterable<Integer> {
+public final class SieveOfEratosthenes implements Iterable<Integer> {
 
-	private final List<Integer> primes = new ArrayList<Integer>();
+    /**
+     * The list of calculated primes.
+     */
+    private final List<Integer> primes = new ArrayList<Integer>();
 
-	/**
-	 * Calculates all the primes below the given limit.  All significant computation is done in the constructor.
-	 * @param limit
-	 */
-	public SieveOfEratosthenes(final int limit) {
-		assert (limit > 2);
-		int[] sieve = new int[limit];
+    /**
+     * Calculates all the primes below the given limit. Currently, all significant computation is done in the
+     * constructor.
+     * 
+     * @param limit
+     *            the upper bound for this sieve.
+     */
+    public SieveOfEratosthenes(final int limit) {
+        assert (limit > 2);
+        int[] sieve = new int[limit];
 
-		for (int i = 0; i < limit; i++) {
-			sieve[i] = i;
-		}
-		sieve[0] = 0;
-		sieve[1] = 0;
+        for (int i = 0; i < limit; i++) {
+            sieve[i] = i;
+        }
+        sieve[0] = 0;
+        sieve[1] = 0;
 
-		for (int i = 0; i < limit; i++) {
-			if (sieve[i] != 0) {
-				primes.add(i);
-				for (int j = 2 * i; j < limit; j = j + i) {
-					sieve[j] = 0;
-				}
-			}
-		}
-	}
-	
-	/**
-	 * Allows for direct access to the nth prime.  
-	 * Index is one-based.  (i.e.  get(1) returns 2, get(2) returns 3, etc)
-	 * @param index
-	 * @return the nth prime computed by this sieve
-	 */
-	public Integer get(int index) {
-		//we substract one, because the array is 0-based, and the nth primes would be 1-based
-		return primes.get(index - 1);  
-		
-	}
+        for (int i = 0; i < limit; i++) {
+            if (sieve[i] != 0) {
+                primes.add(i);
+                for (int j = 2 * i; j < limit; j = j + i) {
+                    sieve[j] = 0;
+                }
+            }
+        }
+    }
 
-	@Override
-	/**
-	 * Convenience method for accessing a iterable and using the sieve in an enhanced for loop
-	 */
-	public Iterator<Integer> iterator() {
-		return primes.iterator();
-	}
+    /**
+     * Allows for direct access to the nth prime. Index is zero-based. (i.e. get(0) returns 2, get(1) returns 3, etc)
+     * 
+     * @param index
+     *            the index (1-based into the array)
+     * @return the nth prime computed by this sieve
+     */
+    public Integer get(final int index) {
+        return primes.get(index);
+
+    }
+
+    /**
+     * Convenience method for accessing a iterable and using the sieve in an enhanced for loop.
+     * 
+     * @return an Iterator of all the primes below "limit"
+     */
+    @Override
+    public Iterator<Integer> iterator() {
+        return primes.iterator();
+    }
 
 }
