@@ -3,8 +3,14 @@ package com.github.johnnyo.euler;
 import com.github.johnnyo.euler.util.FibonacciSequence;
 
 /**
+ * Problem:
  * By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the
  * even-valued terms.
+ * 
+ * Solution:
+ * Solving this problem first involves defining a representation of the Fibonacci Sequence.  Once we have done that, 
+ * we can simply and easily traverse that sequence, summing the even valued members.
+ * 
  * 
  * @author JohnnyO
  * 

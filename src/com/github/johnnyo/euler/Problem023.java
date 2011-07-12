@@ -5,10 +5,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.github.johnnyo.euler.util.PrimeFactors;
+import com.github.johnnyo.euler.util.Factors;
 
 /**
- * Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers
+ * Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
  * 
  * @author JohnnyO
  * 
@@ -17,18 +17,18 @@ public class Problem023 extends BaseTestCase {
 
     private static final int UPPER_LIMIT = 28123;
 
-    public String getAnswer() {
+    public final String getAnswer() {
         return "4179871";
     }
 
     @Override
-    public String solve() {
+    public final String solve() {
         // Step One: Generate a list of all the abundant numbers below our upper limit
         List<Integer> abundantNumbers = new ArrayList<Integer>();
         for (int i = 1; i <= UPPER_LIMIT; i++) {
-            Set<Integer> divisors = new PrimeFactors(i).getProperDivisors();
-            int sum = 0;
-            for (Integer x : divisors) {
+            Set<Long> divisors = new Factors(i).getProperDivisors();
+            long sum = 0;
+            for (Long x : divisors) {
                 sum += x;
             }
             if (sum > i) {

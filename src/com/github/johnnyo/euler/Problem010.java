@@ -11,7 +11,7 @@ import com.github.johnnyo.euler.util.SieveOfEratosthenes;
 public class Problem010 extends BaseTestCase {
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         return "142913828922";
     }
 
@@ -19,7 +19,7 @@ public class Problem010 extends BaseTestCase {
     /**
      * In order to solve this problem, we have extended the 
      */
-    public String solve() {
+    public final String solve() {
         long sum = 0;
         SieveOfEratosthenes sieve = new SieveOfEratosthenes(2000000);
         for (Integer prime : sieve) {

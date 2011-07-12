@@ -10,7 +10,7 @@ package com.github.johnnyo.euler;
 public class Problem009 extends BaseTestCase {
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         return "31875000";
     }
 
@@ -18,7 +18,7 @@ public class Problem009 extends BaseTestCase {
     /**
      * Again, we just do a simple brute force method, 
      */
-    public String solve() {
+    public final String solve() {
         for (int a = 1; a < 1000; a++) {
             for (int b = a; b < 1000; b++) {
                 int c = 1000 - a - b;

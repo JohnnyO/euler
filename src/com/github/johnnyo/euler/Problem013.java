@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.math.BigInteger;
 
 /**
+ * Another simple brute force solution, as long as we have access to arbitrary precision arithmetic.
  * 
  * @author JohnnyO
  * 
@@ -14,12 +15,12 @@ import java.math.BigInteger;
 public class Problem013 extends BaseTestCase {
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         return "5537376230";
     }
 
     @Override
-    public String solve() {
+    public final String solve() {
         try {
             InputStream is = this.getClass().getResourceAsStream("data/problem-013.txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));

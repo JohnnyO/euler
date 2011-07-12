@@ -18,8 +18,7 @@ import com.github.johnnyo.euler.util.Cache;
 public class Problem008 extends BaseTestCase {
 
     @Override
-    public String getAnswer() {
-        // TODO Auto-generated method stub
+    public final String getAnswer() {
         return "40824";
     }
 
@@ -28,7 +27,7 @@ public class Problem008 extends BaseTestCase {
      * This is another pretty straightforward solution, it simply requires us to do some conversion between a string,
      * its characters and the integers that they represent
      */
-    public String solve() {
+    public final String solve() {
         char[] digits = getInput().toCharArray();
         Map<Character, Integer> map = Cache.getCharacterToIntegerMap();
         int max = 0;
@@ -45,7 +44,7 @@ public class Problem008 extends BaseTestCase {
         return Integer.toString(max);
     }
 
-    public String getInput() {
+    private String getInput() {
         try {
             String input = "";
             InputStream is = this.getClass().getResourceAsStream("data/problem-013.txt");

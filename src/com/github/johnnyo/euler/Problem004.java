@@ -1,26 +1,25 @@
 package com.github.johnnyo.euler;
 /**
+ * Problem:
  * A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is
  * 9009 = 91 99.
  * 
  * Find the largest palindrome made from the product of two 3-digit numbers.
  * 
- * @author johnnyo
+ * Solution:
+ * This is a fairly trivial problem to solve in a brute force fashion, presented below.
+ * @author JohnnyO
  * 
  */
 public class Problem004 extends BaseTestCase {
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         return "906609";
     }
 
     @Override
-    /**
-     * This is another problem that it is pretty easy to brute force in under a second, so we don't spend a lot of 
-     * time over-optimizing
-     */
-    public String solve() {
+    public final String solve() {
         int max = 1;
         for (int x = 999; x > 100; x--) {
             for (int y = 999; y > 100; y--) {
@@ -32,7 +31,14 @@ public class Problem004 extends BaseTestCase {
         return Integer.toString(max);
     }
 
-    private boolean isPalindrome(int i) {
+    /**
+     * Tests if the current value (i) is a palindrome (i.e. reads the same backwards and forwards)
+     * 
+     * @param i
+     *            - integer to be tested
+     * @return true if i is a paindrome, false otherwise
+     */
+    private boolean isPalindrome(final int i) {
         String s = Integer.toString(i);
         String reverse = (new StringBuffer(s)).reverse().toString();
         return s.equals(reverse);

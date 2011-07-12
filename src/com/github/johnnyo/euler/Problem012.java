@@ -1,6 +1,6 @@
 package com.github.johnnyo.euler;
 
-import com.github.johnnyo.euler.util.PrimeFactors;
+import com.github.johnnyo.euler.util.Factors;
 
 /**
  * What is the value of the first triangle number to have over five hundred divisors?
@@ -11,20 +11,20 @@ import com.github.johnnyo.euler.util.PrimeFactors;
 public class Problem012 extends BaseTestCase {
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         return "76576500";
     }
 
     @Override
-    public String solve() {
+    public final String solve() {
         int n = 1;
-        while ((new PrimeFactors(triangle(n))).size() < 500) {
+        while ((new Factors(triangle(n))).size() < 500) {
             n++;
         }
         return Long.toString(triangle(n));
     }
 
-    public int triangle(int n) {
+    private int triangle(final int n) {
         int sum = 0;
         for (int i = 1; i <= n; i++) {
             sum += i;

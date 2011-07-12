@@ -24,12 +24,12 @@ import java.util.List;
 public class Problem022 extends BaseTestCase {
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         return "871198282";
     }
 
     @Override
-    public String solve() {
+    public final String solve() {
         String input = this.getInput();
         List<String> names = new ArrayList<String>();
         for (String name : input.split(",")) {
@@ -50,7 +50,7 @@ public class Problem022 extends BaseTestCase {
         return Long.toString(totalScore);
     }
 
-    private int getScore(String name) {
+    private int getScore(final String name) {
         int score = 0;
         for (char c : name.toCharArray()) {
             score += Character.getNumericValue(c) - 9; // getNumericValue returns 10-35
@@ -58,7 +58,7 @@ public class Problem022 extends BaseTestCase {
         return score;
     }
 
-    public String getInput() {
+    private String getInput() {
         try {
             String input = "";
             InputStream is = this.getClass().getResourceAsStream("data/problem-022.txt");

@@ -13,66 +13,68 @@ import org.junit.Before;
  */
 public class Problem017 extends BaseTestCase {
 
-    private static final Map<Integer, String> wording = new HashMap<Integer, String>();
+    private static final Map<Integer, String> WORD_CACHE = new HashMap<Integer, String>();
 
+    /**
+     * Precache the unique stems for constructing numbers.
+     */
     @Before
-    public void setUp() {
-        wording.put(1, "one");
-        wording.put(2, "two");
-        wording.put(3, "three");
-        wording.put(4, "four");
-        wording.put(5, "five");
-        wording.put(6, "six");
-        wording.put(7, "seven");
-        wording.put(8, "eight");
-        wording.put(9, "nine");
+    public final void setUp() {
+        WORD_CACHE.put(1, "one");
+        WORD_CACHE.put(2, "two");
+        WORD_CACHE.put(3, "three");
+        WORD_CACHE.put(4, "four");
+        WORD_CACHE.put(5, "five");
+        WORD_CACHE.put(6, "six");
+        WORD_CACHE.put(7, "seven");
+        WORD_CACHE.put(8, "eight");
+        WORD_CACHE.put(9, "nine");
 
-        wording.put(11, "eleven");
-        wording.put(12, "twelve");
-        wording.put(13, "thirteen");
-        wording.put(14, "fourteen");
-        wording.put(15, "fifteen");
-        wording.put(16, "sixteen");
-        wording.put(17, "seventeen");
-        wording.put(18, "eighteen");
-        wording.put(19, "nineteen");
+        WORD_CACHE.put(11, "eleven");
+        WORD_CACHE.put(12, "twelve");
+        WORD_CACHE.put(13, "thirteen");
+        WORD_CACHE.put(14, "fourteen");
+        WORD_CACHE.put(15, "fifteen");
+        WORD_CACHE.put(16, "sixteen");
+        WORD_CACHE.put(17, "seventeen");
+        WORD_CACHE.put(18, "eighteen");
+        WORD_CACHE.put(19, "nineteen");
 
-        wording.put(10, "ten");
-        wording.put(20, "twenty");
-        wording.put(30, "thirty");
-        wording.put(40, "forty");
-        wording.put(50, "fifty");
-        wording.put(60, "sixty");
-        wording.put(70, "seventy");
-        wording.put(80, "eighty");
-        wording.put(90, "ninety");
+        WORD_CACHE.put(10, "ten");
+        WORD_CACHE.put(20, "twenty");
+        WORD_CACHE.put(30, "thirty");
+        WORD_CACHE.put(40, "forty");
+        WORD_CACHE.put(50, "fifty");
+        WORD_CACHE.put(60, "sixty");
+        WORD_CACHE.put(70, "seventy");
+        WORD_CACHE.put(80, "eighty");
+        WORD_CACHE.put(90, "ninety");
 
     }
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         return "21124";
     }
 
     @Override
-    public String solve() {
+    public final String solve() {
         int count = 0;
         for (int i = 1; i <= 1000; i++) {
             String s = print(i);
-            // System.out.println(s.length() + " " +s);
             count += s.length();
         }
         return Integer.toString(count);
     }
 
-    public String print(final int n) {
+    private String print(final int n) {
 
-        if (wording.get(n) != null) {
-            return wording.get(n);
+        if (WORD_CACHE.get(n) != null) {
+            return WORD_CACHE.get(n);
         } else if (n < 100) {
-            return wording.get(10 * (n / 10)) + wording.get(n % 10);
+            return WORD_CACHE.get(10 * (n / 10)) + WORD_CACHE.get(n % 10);
         } else if (n < 1000) {
-            String head = wording.get(n / 100) + "hundred";
+            String head = WORD_CACHE.get(n / 100) + "hundred";
             int remainder = n % 100;
             if (remainder != 0) {
                 return head + "and" + print(remainder);

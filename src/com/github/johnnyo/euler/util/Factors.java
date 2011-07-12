@@ -1,25 +1,28 @@
 package com.github.johnnyo.euler.util;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 /**
- * Utility class for calculating the prime factors of a given integer. Once calculated, the class can be queried for
- * both the list of all prime factors, as well as its set of proper divisors.
+ * Utility class for calculating the factors of a given Long. Once calculated, the class can be queried for various
+ * subsets, such as the set of prime factors, proper divisors, or all factors
  * 
  * @author JohnnyO
  * 
  */
-public final class PrimeFactors {
+public final class Factors {
 
     /**
      * the number to be factors.
      */
-    private final int number;
+    private final long number;
     /**
      * Storage for the computed list of factors.
      */
-    private final Set<Integer> factors;
+    private final Set<Long> factors;
 
     /**
      * Calculates the list of prime factoprs.
@@ -27,9 +30,9 @@ public final class PrimeFactors {
      * @param n
      *            the number to be factored.
      */
-    public PrimeFactors(final int n) {
+    public Factors(final long n) {
         this.number = n;
-        this.factors = new TreeSet<Integer>();
+        this.factors = new TreeSet<Long>();
         this.calculate();
     }
 
@@ -46,7 +49,7 @@ public final class PrimeFactors {
      * 
      * @return the set of all factors on n.
      */
-    public Set<Integer> getFactors() {
+    public Set<Long> getFactors() {
         return Collections.unmodifiableSet(factors);
     }
 
@@ -56,18 +59,34 @@ public final class PrimeFactors {
      * 
      * @return the Proper Divisors of
      */
-    public Set<Integer> getProperDivisors() {
-        Set<Integer> properDivisors = new TreeSet<Integer>();
+    public Set<Long> getProperDivisors() {
+        Set<Long> properDivisors = new TreeSet<Long>();
         properDivisors.addAll(factors);
         properDivisors.remove(number);
         return properDivisors;
     }
 
     /**
-     * Populates the set of prime numbers of "number".
+     * Calculates the prime factors of n.
+     * @return the list of prime factors of the initial input
+     */
+    public Set<Long> getPrimeFactors() {
+        long n = number;
+         List<Long> primeFactors = new ArrayList<Long>();
+        for (long i = 2; i <= n; i++) {
+            while (n % i == 0) {
+                primeFactors.add(i);
+                n /= i;
+            }
+        }
+        return new HashSet<Long>(primeFactors);
+    }
+
+    /**
+     * Populates the set of factors of "number".
      */
     private void calculate() {
-        for (int i = 1; i <= Math.sqrt(number); i++) {
+        for (long i = 1; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 factors.add(i);
                 factors.add(number / i);
