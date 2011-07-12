@@ -1,7 +1,5 @@
 package com.github.johnnyo.euler;
 
-import java.util.HashMap;
-import java.util.Map;
 /**
  * The following iterative sequence is defined for the set of positive integers:
  * 
@@ -16,6 +14,9 @@ import java.util.Map;
  * 
  * 
  * Solution:
+ * 
+ * Below is an iterative solution. Some time could be shaved off the solution if a cache were used for the length of
+ * chains we have previously seen.
  * 
  * @author JohnnyO
  * 
@@ -32,7 +33,7 @@ public class Problem014 extends BaseTestCase {
         long max = 0;
         long number = 0;
         for (int i = 1; i < 1000000; i++) {
-            long count = cacheLookup(i);
+            long count = countChainLength(i);
             if (count > max) {
                 max = count;
                 number = i;
@@ -41,32 +42,18 @@ public class Problem014 extends BaseTestCase {
         return Long.toString(number);
     }
 
-    private Map<Long, Long> cache = new HashMap<Long, Long>();
-    {
-        cache.put(1L, 1L);
-        cache.put(2L, 2L);
-    }
-
-    /**
-     * Computes the value for n, falling back on the cache, whenever possible.
-     * 
-     * @param n
-     *            the number to lookup in the cache, or calculate when possible
-     * @return the length of the chain for n
-     */
-    private long cacheLookup(final long n) {
-        if (cache.containsKey(n)) {
-            return cache.get(n);
-        } else {
-            long result = 0;
+    private int countChainLength(final int input) {
+        int count = 1;
+        long n = input;
+        while (n != 1) {
             if (n % 2 == 0) {
-                result = 1 + cacheLookup(n / 2);
+                n = n / 2;
             } else {
-                result = 1 + cacheLookup(3 * n + 1);
+                n = 3 * n + 1;
             }
-            cache.put(n, result);
-            return result;
+            count++;
         }
+        return count;
     }
 
 }
