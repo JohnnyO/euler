@@ -1,5 +1,6 @@
 package com.github.johnnyo.euler;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 /**
@@ -20,12 +21,15 @@ public class Problem025 extends BaseTestCase {
 
     @Override
     public final String solve() {
-        final BigInteger limit = new BigInteger("10").pow(999);  
+        
+        // BigInteger doesn't accept scientific notation
+        final BigInteger limit = new BigDecimal("1e999").toBigInteger();
+
         
         long index = 2L;
         BigInteger current = new BigInteger("1");
         BigInteger prev = new BigInteger("1");
-        
+
         while (current.compareTo(limit) < 0) {
             BigInteger temp = current.add(prev);
             prev = current;
