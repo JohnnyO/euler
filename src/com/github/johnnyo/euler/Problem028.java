@@ -23,7 +23,12 @@ package com.github.johnnyo.euler;
  * 
  * for an nxn spiral, the value in the corners is as follows:
  * 
- * NE: n^2 SE: n^2 -3n + 3 SW: (n-1)^2 + 1 NW: n^2 - n + 1
+ * <pre>
+ * NE: n^2 
+ * SE: n^2 -3n + 3 
+ * SW: (n-1)^2 + 1 
+ * NW: n^2 - n + 1
+ * </pre>
  * 
  * 
  * @author JohnnyO
