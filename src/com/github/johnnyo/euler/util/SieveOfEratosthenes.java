@@ -1,6 +1,8 @@
 package com.github.johnnyo.euler.util;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -55,7 +57,15 @@ public final class SieveOfEratosthenes implements Iterable<Integer> {
      */
     public Integer get(final int index) {
         return primes.get(index);
+    }
 
+    /**
+     * Returns an unmodifiable copy of the primes below the limit.
+     * 
+     * @return a collection of primes below limit.
+     */
+    public Collection<Integer> getPrimes() {
+        return Collections.unmodifiableCollection(primes);
     }
 
     /**
