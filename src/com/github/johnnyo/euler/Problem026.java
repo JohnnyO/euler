@@ -39,27 +39,29 @@ import com.github.johnnyo.euler.util.SieveOfEratosthenes;
  */
 public class Problem026 extends BaseTestCase {
 
+    private static final BigInteger TEN = BigInteger.valueOf(10);
+
     @Override
-    public String solve() {
+    public final String solve() {
         // TODO Auto-generated method stub
         return "983";
     }
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         int max = 1;
         SieveOfEratosthenes sieve = new SieveOfEratosthenes(1000);
         for (int prime : sieve) {
-            if (isFullReptend(prime))
+            if (isFullReptend(prime)) {
                 max = prime;
+            }
         }
         return Integer.toString(max);
     }
 
-    private boolean isFullReptend(int prime) {
+    private boolean isFullReptend(final int prime) {
 
         final BigInteger bigPrime = BigInteger.valueOf(prime);
-        final BigInteger TEN = BigInteger.valueOf(10);
 
         for (int i = 1; i < prime - 1; i++) {
             if (BigInteger.ONE.equals(TEN.modPow(BigInteger.valueOf(i), bigPrime))) {
