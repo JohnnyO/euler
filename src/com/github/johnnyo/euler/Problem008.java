@@ -47,7 +47,7 @@ public class Problem008 extends BaseTestCase {
     private String getInput() {
         try {
             String input = "";
-            InputStream is = this.getClass().getResourceAsStream("data/problem-013.txt");
+            InputStream is = this.getClass().getResourceAsStream("data/problem-018.txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             String line = null;
             while ((line = reader.readLine()) != null) {
