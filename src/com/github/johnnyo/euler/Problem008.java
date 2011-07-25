@@ -32,13 +32,10 @@ public class Problem008 extends BaseTestCase {
         Map<Character, Integer> map = Cache.getCharacterToIntegerMap();
         int max = 0;
         for (int i = 0; i < digits.length - 5; i++) {
-            int value = map.get(digits[i]);
-
-            value *= map.get(digits[i + 1]);
-            value *= map.get(digits[i + 2]);
-            value *= map.get(digits[i + 3]);
-            value *= map.get(digits[i + 4]);
-
+            int value = 1;
+            for (int j = 0; j < 5; j++) {
+                value *= map.get(digits[i + j]);
+            }
             max = Math.max(max, value);
         }
         return Integer.toString(max);
@@ -47,7 +44,7 @@ public class Problem008 extends BaseTestCase {
     private String getInput() {
         try {
             String input = "";
-            InputStream is = this.getClass().getResourceAsStream("data/problem-018.txt");
+            InputStream is = this.getClass().getResourceAsStream("data/problem-008.txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             String line = null;
             while ((line = reader.readLine()) != null) {
